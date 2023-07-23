@@ -17,9 +17,9 @@ public class App
     public static void main( String[] args )
     {
         Alien alObj = new Alien();
-        alObj.setAid(104);
-        alObj.setAname("Mario");
-        alObj.setColor("Brown");
+        alObj.setAid(101);
+        alObj.setAname("Hamzath");
+        alObj.setColor("Red");
 
         Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
         ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
