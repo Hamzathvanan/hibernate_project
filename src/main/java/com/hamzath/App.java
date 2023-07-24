@@ -16,17 +16,18 @@ public class App
 {
     public static void main( String[] args )
     {
-        Alien alObj = new Alien();
-        alObj.setAid(101);
-        alObj.setAname("Hamzath");
-        alObj.setColor("Red");
+        Alien alObj = null;
+
 
         Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
         ServiceRegistry reg = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
         SessionFactory sf = con.buildSessionFactory(reg);
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
-        session.save(alObj);
+//        session.save(alObj);
         tx.commit();
+        alObj = (Alien) session.get(Alien.class,104);
+
+        System.out.println(alObj);
     }
 }
