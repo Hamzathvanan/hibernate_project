@@ -9,7 +9,7 @@
     <property name="connection.username">root</property>
     <property name="connection.password">Raymax123</property>
     <property name="hibernate.dialect">com.hamzath.SQLDialect.CustomMySQLDialect</property>
-    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.hbm2ddl.auto">create</property>
     <property name="show_sql">true</property>
 
     <!-- DB schema will be updated if needed -->

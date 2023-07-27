@@ -16,7 +16,15 @@ public class App
 {
     public static void main( String[] args )
     {
-        Alien alObj = null;
+        AlienName an = new AlienName();
+        an.setFname("Hamzath");
+        an.setLname("Vanan");
+        an.setMname("Balachandran");
+
+        Alien alObj = new Alien();
+        alObj.setColor("Red");
+        alObj.setAid(101);
+        alObj.setAname(an);
 
 
         Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
@@ -24,9 +32,12 @@ public class App
         SessionFactory sf = con.buildSessionFactory(reg);
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
-//        session.save(alObj);
+
+        session.save(alObj);
+
         tx.commit();
-        alObj = (Alien) session.get(Alien.class,104);
+
+//        alObj = (Alien) session.get(Alien.class,104);
 
         System.out.println(alObj);
     }
