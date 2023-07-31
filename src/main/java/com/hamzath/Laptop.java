@@ -12,15 +12,15 @@ public class Laptop {
     private LapModel modelDetail;
     private int warranty;
 
-    @ManyToMany
-    private List<Student> student = new ArrayList<Student>();
+    @ManyToOne
+    private Alien alien;
 
-    public List<Student> getStudent() {
-        return student;
+    public Alien getAlien() {
+        return alien;
     }
 
-    public void setStudent(List<Student> student) {
-        this.student = student;
+    public void setAlien(Alien alien) {
+        this.alien = alien;
     }
 
     public int getLid() {
@@ -53,7 +53,7 @@ public class Laptop {
                 "lid=" + lid +
                 ", modelDetail=" + modelDetail +
                 ", warranty=" + warranty +
-                ", student=" + student +
+                ", student=" + alien +
                 '}';
     }
 }

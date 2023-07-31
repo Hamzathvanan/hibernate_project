@@ -1,6 +1,8 @@
 package com.hamzath;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @Table(name = "alien_table")
@@ -10,6 +12,17 @@ public class Alien {
     private AlienName aname;
 
     private String color;
+
+    @OneToMany(mappedBy = "alien", fetch = FetchType.EAGER)
+    private Collection<Laptop> laps = new ArrayList<Laptop>();
+
+    public Collection<Laptop> getLaps() {
+        return laps;
+    }
+
+    public void setLaps(Collection<Laptop> laps) {
+        this.laps = laps;
+    }
 
     public int getAid() {
         return aid;
